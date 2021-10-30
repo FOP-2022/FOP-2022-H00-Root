@@ -33,7 +33,7 @@ public class TutorTests {
     var robots = new ArrayList<Robot>();
     for (final var fieldEntity : endState) {
       if (fieldEntity instanceof Robot) {
-        robots.add((Robot)fieldEntity);
+        robots.add((Robot) fieldEntity);
       }
     }
     assertEquals(1, robots.size(), "Am Ende ist nicht genau ein Roboter vorhanden");
@@ -53,44 +53,43 @@ public class TutorTests {
     assertEquals(Direction.UP, r.getDirection(), "Blickrichtung des Roboters inkorrekt");
   }
 
-
   @Test
-  public void finalPositionCorrectWithTrue(){
+  public void finalPositionCorrectWithTrue() {
     finalPositionCorrect(true);
   }
 
   @Test
-  public void finalPositionCorrectWithFalse(){
+  public void finalPositionCorrectWithFalse() {
     finalPositionCorrect(false);
   }
 
   @Test
-  public void finalPositionAndDirectionCorrectWithTrue(){
+  public void finalPositionAndDirectionCorrectWithTrue() {
     finalPositionAndDirectionCorrect(true);
   }
 
   @Test
-  public void finalPositionAndDirectionCorrectWithFalse(){
+  public void finalPositionAndDirectionCorrectWithFalse() {
     finalPositionAndDirectionCorrect(false);
   }
 
   @Test
-  public void coinPlacementDecisionCorrectWithTrue(){
+  public void coinPlacementDecisionCorrectWithTrue() {
     final var finalState = getFinalState(true);
     var coins = new ArrayList<Coin>();
     for (final var fieldEntity : finalState) {
-      if (fieldEntity instanceof Coin){
-        coins.add((Coin)fieldEntity);
+      if (fieldEntity instanceof Coin) {
+        coins.add((Coin) fieldEntity);
       }
     }
     assertEquals(1, coins.size(), "Anzahl der Münzen im Endzustand inkorrekt für shouldPutCoin == true");
   }
 
   @Test
-  public void coinPlacementDecisionCorrectWithFalse(){
+  public void coinPlacementDecisionCorrectWithFalse() {
     final var finalState = getFinalState(false);
     for (final var fieldEntity : finalState) {
-      if (fieldEntity instanceof Coin){
+      if (fieldEntity instanceof Coin) {
         fail("Im Endzustand liegt eine Münze, obwohl shouldPutCoin == false");
       }
     }
@@ -101,14 +100,12 @@ public class TutorTests {
     final var finalState = getFinalState(true);
     var coins = new ArrayList<Coin>();
     for (final var fieldEntity : finalState) {
-      if (fieldEntity instanceof Coin){
-        coins.add((Coin)fieldEntity);
+      if (fieldEntity instanceof Coin) {
+        coins.add((Coin) fieldEntity);
       }
     }
     assertEquals(1, coins.size(), "Anzahl der Münzen im Endzustand inkorrekt für shouldPutCoin == true");
     assertEquals(0, coins.get(0).getX(), "X-Koordinate der Münze inkorrekt");
     assertEquals(0, coins.get(0).getY(), "Y-Koordinate der Münze inkorrekt");
   }
-
-
 }

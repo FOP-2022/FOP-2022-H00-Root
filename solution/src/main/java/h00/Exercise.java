@@ -1,11 +1,11 @@
 package h00;
 
-import static fopbot.Direction.*;
+import fopbot.Robot;
+import fopbot.World;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-import fopbot.Robot;
-import fopbot.World;
+import static fopbot.Direction.UP;
 
 public class Exercise {
 
@@ -28,19 +28,21 @@ public class Exercise {
   }
 
   /**
-   *
    * @param shouldPutCoin a coin should be put at the bottom left position, iff this is true
-   *
    */
   public static void doExercise(final boolean shouldPutCoin) {
     Robot r = new Robot(4, 4, UP, 1);
     // TODO H00 Implement your solution here:
     for (int i = 0; i < 2; i++) {
       r.turnLeft();
-      for (int j = 0; j < 4; j++) r.move();
+      for (int j = 0; j < 4; j++) {
+        r.move();
+      }
     }
     r.turnLeft();
     r.turnLeft();
-    if (shouldPutCoin) r.putCoin();
+    if (shouldPutCoin) {
+      r.putCoin();
+    }
   }
 }

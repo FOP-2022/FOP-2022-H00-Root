@@ -1,7 +1,6 @@
 package h00;
 
 import org.sourcegrade.jagr.api.rubric.*;
-import org.sourcegrade.jagr.api.rubric.RubricForSubmission;
 
 @RubricForSubmission("h00")
 public class H00_RubricProvider implements RubricProvider {
@@ -54,12 +53,10 @@ public class H00_RubricProvider implements RubricProvider {
     .addChildCriteria(finalPositionCorrect, finalPositionAndDirectionCorrect, coinPlacementDecisionCorrect, coinPositionCorrect)
     .build();
 
-
   public static final Rubric RUBRIC = Rubric.builder()
     .title("H00")
     .addChildCriteria(H3)
     .build();
-
 
   @Override
   public Rubric getRubric() {
